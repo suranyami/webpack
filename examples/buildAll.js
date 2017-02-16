@@ -9,16 +9,16 @@ var cmds = fs.readdirSync(__dirname).filter(function(dirname) {
 });
 
 var stack = function() {
-	console.log("done");
+	log.log("done");
 };
 for(var i = cmds.length-1; i >= 0; i--) {
 	var cmd = cmds[i];
 	stack = (function(next, cmd) {
 		return function() {
-			console.log(cmd);
+			log.log(cmd);
 			cp.exec(cmd, function(error, stdout, stderr) {
-				if(error) console.error(error);
-				else if(stderr) console.error(stderr), next();
+				if(error) log.error(error);
+				else if(stderr) log.error(stderr), next();
 				else next();
 			});
 		}

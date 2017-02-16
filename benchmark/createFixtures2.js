@@ -39,12 +39,12 @@ function genModule(prefix, depth, asyncDepth, multiplex, r, circular) {
 
 for(var i = 2; i < 14; i++) {
 	var count = genModule("tree-" + i, 6, 100, i, 0, []);
-	console.log("generated tree", i, count);
+	log.log("generated tree", i, count);
 }
 
 for(var i = 2; i < 14; i++) {
 	var count = genModule("async-tree-" + i, 6, 1, i, 0, []);
-	console.log("generated async tree", i, count);
+	log.log("generated async tree", i, count);
 }
 
 var a = genModule("module-async", 7, 1, 3, 2, []);
@@ -53,4 +53,4 @@ var b = genModule("module-big-async", 5, 2, 9, 2, []);
 
 var c = genModule("module-broad-async", 3, 3, 20, 10, []);
 
-console.log("generated modules", a, b, c);
+log.log("generated modules", a, b, c);

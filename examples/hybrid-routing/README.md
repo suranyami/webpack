@@ -236,7 +236,7 @@ window.onLinkToPage = function onLinkToPage(name) { // name is "a" or "b"
 /******/ 	__webpack_require__.p = "js/";
 
 /******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ 	__webpack_require__.oe = function(err) { log.error(err); throw err; };
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 8);
@@ -255,7 +255,7 @@ window.onLinkToPage = function onLinkToPage(name) { // name is "a" or "b"
 /***/ function(module, exports) {
 
 module.exports = function(page) {
-	console.log(page());
+	log.log(page());
 };
 
 /***/ },

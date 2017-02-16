@@ -7,10 +7,10 @@ function getTemplate(templateName, callback) {
 	});
 }
 getTemplate("a", function(a) {
-	console.log(a);
+	log.log(a);
 });
 getTemplate("b", function(b) {
-	console.log(b);
+	log.log(b);
 });
 ```
 
@@ -154,7 +154,7 @@ getTemplate("b", function(b) {
 /******/ 	__webpack_require__.p = "js/";
 
 /******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ 	__webpack_require__.oe = function(err) { log.error(err); throw err; };
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
@@ -179,10 +179,10 @@ function getTemplate(templateName, callback) {
 	}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 }
 getTemplate("a", function(a) {
-	console.log(a);
+	log.log(a);
 });
 getTemplate("b", function(b) {
-	console.log(b);
+	log.log(b);
 });
 
 /***/ }

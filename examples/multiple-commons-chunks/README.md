@@ -220,7 +220,7 @@ module.exports = {
 /******/ 	__webpack_require__.p = "js/";
 
 /******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ 	__webpack_require__.oe = function(err) { log.error(err); throw err; };
 /******/ })
 /************************************************************************/
 ```

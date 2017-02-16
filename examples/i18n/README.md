@@ -8,8 +8,8 @@ The I18nPlugin replaces every occurrence of the i18n function `__(...)` with a c
 # example.js
 
 ``` javascript
-console.log(__("Hello World"));
-console.log(__("Missing Text"));
+log.log(__("Hello World"));
+log.log(__("Missing Text"));
 ```
 
 # webpack.config.js
@@ -130,8 +130,8 @@ module.exports = Object.keys(languages).map(function(language) {
   \********************/
 /***/ function(module, exports, __webpack_require__) {
 
-console.log("Hallo Welt");
-console.log("Missing Text");
+log.log("Hallo Welt");
+log.log("Missing Text");
 
 /***/ }
 /******/ ]);
@@ -217,8 +217,8 @@ console.log("Missing Text");
   \********************/
 /***/ function(module, exports, __webpack_require__) {
 
-console.log("Hello World");
-console.log("Missing Text");
+log.log("Hello World");
+log.log("Missing Text");
 
 /***/ }
 /******/ ]);

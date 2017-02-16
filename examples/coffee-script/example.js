@@ -1,1 +1,1 @@
-console.log(require("./cup1"));
+log.log(require("./cup1"));

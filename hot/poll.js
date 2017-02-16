@@ -10,7 +10,7 @@ if(module.hot) {
 		if(module.hot.status() === "idle") {
 			module.hot.check(true).then(function(updatedModules) {
 				if(!updatedModules) {
-					if(fromUpdate) console.log("[HMR] Update applied.");
+					if(fromUpdate) log.log("[HMR] Update applied.");
 					return;
 				}
 				require("./log-apply-result")(updatedModules, updatedModules);
@@ -18,11 +18,11 @@ if(module.hot) {
 			}).catch(function(err) {
 				var status = module.hot.status();
 				if(["abort", "fail"].indexOf(status) >= 0) {
-					console.warn("[HMR] Cannot apply update.");
-					console.warn("[HMR] " + err.stack || err.message);
-					console.warn("[HMR] You need to restart the application!");
+					log.warn("[HMR] Cannot apply update.");
+					log.warn("[HMR] " + err.stack || err.message);
+					log.warn("[HMR] You need to restart the application!");
 				} else {
-					console.warn("[HMR] Update failed: " + err.stack || err.message);
+					log.warn("[HMR] Update failed: " + err.stack || err.message);
 				}
 			});
 		}

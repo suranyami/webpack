@@ -6,7 +6,7 @@ The bundle loader is used to create a wrapper module for `file.js` that loads th
 
 ``` javascript
 require("bundle-loader!./file.js")(function(fileJsExports) {
-	console.log(fileJsExports);
+	log.log(fileJsExports);
 });
 ```
 
@@ -157,7 +157,7 @@ module.exports = "It works";
 /******/ 	__webpack_require__.p = "js/";
 
 /******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ 	__webpack_require__.oe = function(err) { log.error(err); throw err; };
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
@@ -200,7 +200,7 @@ __webpack_require__.e/* require.ensure */(0).then((function(require) {
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! bundle-loader!./file.js */ 0)(function(fileJsExports) {
-	console.log(fileJsExports);
+	log.log(fileJsExports);
 });
 
 

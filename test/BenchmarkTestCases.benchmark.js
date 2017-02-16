@@ -188,7 +188,7 @@ describe("BenchmarkTestCases", function() {
 					if(!config.output.path) config.output.path = outputDirectory;
 					runBenchmark(baseline.webpack, config, (err, stats) => {
 						if(err) return done(err);
-						console.log(`        ${baseline.name} ${stats.text}`);
+						log.log(`        ${baseline.name} ${stats.text}`);
 						if(baseline.name === "HEAD")
 							headStats = stats;
 						else
@@ -202,7 +202,7 @@ describe("BenchmarkTestCases", function() {
 						if(baselineStats.maxConfidence < headStats.minConfidence) {
 							throw new Error(`HEAD (${headStats.text}) is slower than ${baseline.name} (${baselineStats.text}) (90% confidence)`);
 						} else if(baselineStats.minConfidence > headStats.maxConfidence) {
-							console.log(`======> HEAD is ${Math.round(baselineStats.mean / headStats.mean * 100 - 100)}% faster than ${baseline.name} (90% confidence)!`);
+							log.log(`======> HEAD is ${Math.round(baselineStats.mean / headStats.mean * 100 - 100)}% faster than ${baseline.name} (90% confidence)!`);
 						}
 					});
 				}

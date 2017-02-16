@@ -1,2 +1,2 @@
-console.log(require("./vendor2"));
+log.log(require("./vendor2"));
 module.exports = "pageB";

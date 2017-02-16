@@ -6,9 +6,9 @@ This example illustrates how to leverage the `import()` syntax to create Context
 async function getTemplate(templateName) {
 	try {
 		let template = await import(`./templates/${templateName}`);
-		console.log(template);
+		log.log(template);
 	} catch(err) {
-		console.error("template error");
+		log.error("template error");
 		return new Error(err);
 	}
 }
@@ -172,7 +172,7 @@ export default foo;
 /******/ 	__webpack_require__.p = "js/";
 
 /******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ 	__webpack_require__.oe = function(err) { log.error(err); throw err; };
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 4);
@@ -245,9 +245,9 @@ webpackAsyncContext.id = 0;
 async function getTemplate(templateName) {
 	try {
 		let template = await __webpack_require__(/*! ./templates */ 0)(`./${templateName}`);
-		console.log(template);
+		log.log(template);
 	} catch(err) {
-		console.error("template error");
+		log.error("template error");
 		return new Error(err);
 	}
 }

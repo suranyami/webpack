@@ -21,14 +21,14 @@ module.exports = {
 # example.js
 
 ``` javascript
-console.log(require("../dll/alpha"));
-console.log(require("../dll/a"));
+log.log(require("../dll/alpha"));
+log.log(require("../dll/a"));
 
-console.log(require("beta/beta"));
-console.log(require("beta/b"));
-console.log(require("beta/c"));
+log.log(require("beta/beta"));
+log.log(require("beta/b"));
+log.log(require("beta/c"));
 
-console.log(require("module"));
+log.log(require("module"));
 ```
 
 # js/output.js
@@ -201,14 +201,14 @@ module.exports = (__webpack_require__(0))(5);
   \********************/
 /***/ function(module, exports, __webpack_require__) {
 
-console.log(__webpack_require__(/*! ../dll/alpha */ 3));
-console.log(__webpack_require__(/*! ../dll/a */ 2));
+log.log(__webpack_require__(/*! ../dll/alpha */ 3));
+log.log(__webpack_require__(/*! ../dll/a */ 2));
 
-console.log(__webpack_require__(/*! beta/beta */ 5));
-console.log(__webpack_require__(/*! beta/b */ 4));
-console.log(__webpack_require__(/*! beta/c */ 6));
+log.log(__webpack_require__(/*! beta/beta */ 5));
+log.log(__webpack_require__(/*! beta/b */ 4));
+log.log(__webpack_require__(/*! beta/c */ 6));
 
-console.log(__webpack_require__(/*! module */ 7));
+log.log(__webpack_require__(/*! module */ 7));
 
 
 /***/ }

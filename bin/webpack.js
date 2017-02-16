@@ -168,7 +168,7 @@ function processOptions(options) {
 	// process Promise
 	if(typeof options.then === "function") {
 		options.then(processOptions).catch(function(err) {
-			console.error(err.stack || err);
+			log.error(err.stack || err);
 			process.exit(1); // eslint-disable-line
 		});
 		return;
@@ -309,9 +309,9 @@ function processOptions(options) {
 		var WebpackOptionsValidationError = require("../lib/WebpackOptionsValidationError");
 		if(e instanceof WebpackOptionsValidationError) {
 			if(argv.color)
-				console.error("\u001b[1m\u001b[31m" + e.message + "\u001b[39m\u001b[22m");
+				log.error("\u001b[1m\u001b[31m" + e.message + "\u001b[39m\u001b[22m");
 			else
-				console.error(e.message);
+				log.error(e.message);
 			process.exit(1); // eslint-disable-line no-process-exit
 		}
 		throw e;
@@ -331,8 +331,8 @@ function processOptions(options) {
 		}
 		if(err) {
 			lastHash = null;
-			console.error(err.stack || err);
-			if(err.details) console.error(err.details);
+			log.error(err.stack || err);
+			if(err.details) log.error(err.details);
 			process.exit(1); // eslint-disable-line
 		}
 		if(outputOptions.json) {
@@ -356,7 +356,7 @@ function processOptions(options) {
 			process.stdin.resume();
 		}
 		compiler.watch(watchOptions, compilerCallback);
-		console.log("\nWebpack is watching the files…\n");
+		log.log("\nWebpack is watching the files…\n");
 	} else
 		compiler.run(compilerCallback);
 

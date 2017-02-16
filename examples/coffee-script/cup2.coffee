@@ -1,3 +1,3 @@
-console.log "yeah coffee-script"
+log.log "yeah coffee-script"
 
 module.exports = 42

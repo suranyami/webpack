@@ -122,7 +122,7 @@ module.exports = function(yargs, argv, convertOptions) {
 
 	function processConfiguredOptions(options) {
 		if(options === null || typeof options !== "object") {
-			console.error("Config did not export an object or a function returning an object.");
+			log.error("Config did not export an object or a function returning an object.");
 			process.exit(-1); // eslint-disable-line
 		}
 
@@ -236,7 +236,7 @@ module.exports = function(yargs, argv, convertOptions) {
 					name = name.substring(0, p);
 				}
 			} catch(e) {
-				console.log("Invalid plugin arguments " + name + " (" + e + ").");
+				log.log("Invalid plugin arguments " + name + " (" + e + ").");
 				process.exit(-1); // eslint-disable-line
 			}
 
@@ -245,20 +245,20 @@ module.exports = function(yargs, argv, convertOptions) {
 				var resolve = require("enhanced-resolve");
 				path = resolve.sync(process.cwd(), name);
 			} catch(e) {
-				console.log("Cannot resolve plugin " + name + ".");
+				log.log("Cannot resolve plugin " + name + ".");
 				process.exit(-1); // eslint-disable-line
 			}
 			var Plugin;
 			try {
 				Plugin = require(path);
 			} catch(e) {
-				console.log("Cannot load plugin " + name + ". (" + path + ")");
+				log.log("Cannot load plugin " + name + ". (" + path + ")");
 				throw e;
 			}
 			try {
 				return new Plugin(args);
 			} catch(e) {
-				console.log("Cannot instantiate plugin " + name + ". (" + path + ")");
+				log.log("Cannot instantiate plugin " + name + ". (" + path + ")");
 				throw e;
 			}
 		}
@@ -517,9 +517,9 @@ module.exports = function(yargs, argv, convertOptions) {
 			} else if(configFileLoaded) {
 				throw new Error("'output.filename' is required, either in config file or as --output-filename");
 			} else {
-				console.error("No configuration file found and no output filename configured via CLI option.");
-				console.error("A configuration file could be named 'webpack.config.js' in the current directory.");
-				console.error("Use --help to display the CLI options.");
+				log.error("No configuration file found and no output filename configured via CLI option.");
+				log.error("A configuration file could be named 'webpack.config.js' in the current directory.");
+				log.error("Use --help to display the CLI options.");
 				process.exit(-1); // eslint-disable-line
 			}
 		}
@@ -560,13 +560,13 @@ module.exports = function(yargs, argv, convertOptions) {
 
 		if(!options.entry) {
 			if(configFileLoaded) {
-				console.error("Configuration file found but no entry configured.");
+				log.error("Configuration file found but no entry configured.");
 			} else {
-				console.error("No configuration file found and no entry configured via CLI option.");
-				console.error("When using the CLI you need to provide at least two arguments: entry and output.");
-				console.error("A configuration file could be named 'webpack.config.js' in the current directory.");
+				log.error("No configuration file found and no entry configured via CLI option.");
+				log.error("When using the CLI you need to provide at least two arguments: entry and output.");
+				log.error("A configuration file could be named 'webpack.config.js' in the current directory.");
 			}
-			console.error("Use --help to display the CLI options.");
+			log.error("Use --help to display the CLI options.");
 			process.exit(-1); // eslint-disable-line
 		}
 	}

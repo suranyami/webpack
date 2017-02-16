@@ -5,7 +5,6 @@
 
 var log = require('picolog');
 log.level = log.NONE;
-global.console = log;
 
 module.exports = function(updatedModules, renewedModules) {
 	var unacceptedModules = updatedModules.filter(function(moduleId) {
@@ -13,23 +12,23 @@ module.exports = function(updatedModules, renewedModules) {
 	});
 
 	if(unacceptedModules.length > 0) {
-		console.warn("[HMR] The following modules couldn't be hot updated: (They would need a full reload!)");
+		log.warn("[HMR] The following modules couldn't be hot updated: (They would need a full reload!)");
 		unacceptedModules.forEach(function(moduleId) {
-			console.warn("[HMR]  - " + moduleId);
+			log.warn("[HMR]  - " + moduleId);
 		});
 	}
 
 	if(!renewedModules || renewedModules.length === 0) {
-		console.log("[HMR] Nothing hot updated.");
+		log.log("[HMR] Nothing hot updated.");
 	} else {
-		console.log("[HMR] Updated modules:");
+		log.log("[HMR] Updated modules:");
 		renewedModules.forEach(function(moduleId) {
-			console.log("[HMR]  - " + moduleId);
+			log.log("[HMR]  - " + moduleId);
 		});
 		var numberIds = renewedModules.every(function(moduleId) {
 			return typeof moduleId === "number";
 		});
 		if(numberIds)
-			console.log("[HMR] Consider using the NamedModulesPlugin for module names.");
+			log.log("[HMR] Consider using the NamedModulesPlugin for module names.");
 	}
 };

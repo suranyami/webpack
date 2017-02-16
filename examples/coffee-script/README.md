@@ -2,7 +2,7 @@
 # example.js
 
 ``` javascript
-console.log(require("./cup1"));
+log.log(require("./cup1"));
 ```
 
 # cup1.coffee
@@ -18,7 +18,7 @@ module.exports =
 # cup2.coffee
 
 ``` coffee-script
-console.log "yeah coffee-script"
+log.log "yeah coffee-script"
 
 module.exports = 42
 ```
@@ -107,7 +107,7 @@ module.exports = 42
   \*********************/
 /***/ function(module, exports) {
 
-console.log("yeah coffee-script");
+log.log("yeah coffee-script");
 
 module.exports = 42;
 
@@ -138,7 +138,7 @@ module.exports = {
   \********************/
 /***/ function(module, exports, __webpack_require__) {
 
-console.log(__webpack_require__(/*! ./cup1 */ 1));
+log.log(__webpack_require__(/*! ./cup1 */ 1));
 
 /***/ }
 /******/ ]);

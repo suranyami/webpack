@@ -4,8 +4,8 @@ function getTemplate(templateName, callback) {
 	});
 }
 getTemplate("a", function(a) {
-	console.log(a);
+	log.log(a);
 });
 getTemplate("b", function(b) {
-	console.log(b);
+	log.log(b);
 });

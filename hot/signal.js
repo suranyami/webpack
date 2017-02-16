@@ -8,16 +8,16 @@ if(module.hot) {
 		module.hot.check().then(function(updatedModules) {
 			if(!updatedModules) {
 				if(fromUpdate)
-					console.log("[HMR] Update applied.");
+					log.log("[HMR] Update applied.");
 				else
-					console.warn("[HMR] Cannot find update.");
+					log.warn("[HMR] Cannot find update.");
 				return;
 			}
 
 			return module.hot.apply({
 				ignoreUnaccepted: true,
 				onUnaccepted: function(data) {
-					console.warn("Ignored an update to unaccepted module " + data.chain.join(" -> "));
+					log.warn("Ignored an update to unaccepted module " + data.chain.join(" -> "));
 				},
 			}).then(function(renewedModules) {
 				require("./log-apply-result")(updatedModules, renewedModules);
@@ -27,19 +27,19 @@ if(module.hot) {
 		}).catch(function(err) {
 			var status = module.hot.status();
 			if(["abort", "fail"].indexOf(status) >= 0) {
-				console.warn("[HMR] Cannot apply update.");
-				console.warn("[HMR] " + err.stack || err.message);
-				console.warn("[HMR] You need to restart the application!");
+				log.warn("[HMR] Cannot apply update.");
+				log.warn("[HMR] " + err.stack || err.message);
+				log.warn("[HMR] You need to restart the application!");
 			} else {
-				console.warn("[HMR] Update failed: " + err.stack || err.message);
+				log.warn("[HMR] Update failed: " + err.stack || err.message);
 			}
 		});
 	};
 
 	process.on(__resourceQuery.substr(1) || "SIGUSR2", function() {
 		if(module.hot.status() !== "idle") {
-			console.warn("[HMR] Got signal but currently in " + module.hot.status() + " state.");
-			console.warn("[HMR] Need to be in idle state to start hot update.");
+			log.warn("[HMR] Got signal but currently in " + module.hot.status() + " state.");
+			log.warn("[HMR] Need to be in idle state to start hot update.");
 			return;
 		}
 

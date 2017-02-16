@@ -220,7 +220,7 @@ Object.keys(tests).filter(function(name) {
 suite.on("cycle", function(event) {
 	process.stderr.write("\n");
 	var b = event.target;
-	console.log(b.name + "\t" + Math.floor(1000 * (b.stats.mean - b.stats.moe)) + "\t" + Math.floor(1000 * (b.stats.mean + b.stats.moe)));
+	log.log(b.name + "\t" + Math.floor(1000 * (b.stats.mean - b.stats.moe)) + "\t" + Math.floor(1000 * (b.stats.mean + b.stats.moe)));
 });
 
 suite.run({

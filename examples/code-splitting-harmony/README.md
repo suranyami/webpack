@@ -12,7 +12,7 @@ Providing dynamic expressions to `import` is possible. The same limits as with d
 import a from "a";
 
 import("b").then(function(b) {
-	console.log("b loaded", b);
+	log.log("b loaded", b);
 })
 
 function loadC(name) {
@@ -20,7 +20,7 @@ function loadC(name) {
 }
 
 Promise.all([loadC("1"), loadC("2")]).then(function(arr) {
-	console.log("c/1 and c/2 loaded", arr);
+	log.log("c/1 and c/2 loaded", arr);
 });
 ```
 
@@ -165,7 +165,7 @@ Promise.all([loadC("1"), loadC("2")]).then(function(arr) {
 /******/ 	__webpack_require__.p = "js/";
 
 /******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ 	__webpack_require__.oe = function(err) { log.error(err); throw err; };
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 4);
@@ -243,7 +243,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, /*! b */ 5)).then(function(b) {
-	console.log("b loaded", b);
+	log.log("b loaded", b);
 })
 
 function loadC(name) {
@@ -251,7 +251,7 @@ function loadC(name) {
 }
 
 Promise.all([loadC("1"), loadC("2")]).then(function(arr) {
-	console.log("c/1 and c/2 loaded", arr);
+	log.log("c/1 and c/2 loaded", arr);
 });
 
 

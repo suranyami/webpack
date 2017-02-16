@@ -1,3 +1,3 @@
 module.exports = function(page) {
-	console.log(page());
+	log.log(page());
 };

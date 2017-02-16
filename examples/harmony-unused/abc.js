@@ -1,3 +1,3 @@
-export function a() { console.log("a"); }
-export function b() { console.log("b"); }
-export function c() { console.log("c"); }
+export function a() { log.log("a"); }
+export function b() { log.log("b"); }
+export function c() { log.log("c"); }

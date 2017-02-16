@@ -257,7 +257,7 @@ module.exports = (__webpack_require__(0))(0);
   \******************/
 /***/ function(module, exports, __webpack_require__) {
 
-console.log(__webpack_require__(/*! ./vendor */ 1));
+log.log(__webpack_require__(/*! ./vendor */ 1));
 module.exports = "pageA";
 
 /***/ }

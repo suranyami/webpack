@@ -18,7 +18,7 @@ require(["./common"], function(common) {
 
 ``` javascript
 require(["./a"], function(a) {
-	console.log(a + require("./b"));
+	log.log(a + require("./b"));
 });
 ```
 

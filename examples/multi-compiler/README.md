@@ -5,7 +5,7 @@
 if(ENV === "mobile") {
 	require("./mobile-stuff");
 }
-console.log("Running " + ENV + " build");
+log.log("Running " + ENV + " build");
 ```
 
 # webpack.config.js
@@ -130,7 +130,7 @@ module.exports = [
 if(false) {
 	require("./mobile-stuff");
 }
-console.log("Running " + "desktop" + " build");
+log.log("Running " + "desktop" + " build");
 
 /***/ }
 /******/ ]);
@@ -230,7 +230,7 @@ console.log("Running " + "desktop" + " build");
 if(true) {
 	__webpack_require__(/*! ./mobile-stuff */ 0);
 }
-console.log("Running " + "mobile" + " build");
+log.log("Running " + "mobile" + " build");
 
 /***/ }
 /******/ ]);

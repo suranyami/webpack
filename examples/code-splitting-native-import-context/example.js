@@ -1,9 +1,9 @@
 async function getTemplate(templateName) {
 	try {
 		let template = await import(`./templates/${templateName}`);
-		console.log(template);
+		log.log(template);
 	} catch(err) {
-		console.error("template error");
+		log.error("template error");
 		return new Error(err);
 	}
 }

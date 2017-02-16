@@ -4,8 +4,8 @@
 function getTemplate(templateName) {
 	return require("./templates/"+templateName);
 }
-console.log(getTemplate("a"));
-console.log(getTemplate("b"));
+log.log(getTemplate("a"));
+log.log(getTemplate("b"));
 ```
 
 # templates/
@@ -182,8 +182,8 @@ webpackContext.id = 3;
 function getTemplate(templateName) {
 	return __webpack_require__(/*! ./templates */ 3)("./"+templateName);
 }
-console.log(getTemplate("a"));
-console.log(getTemplate("b"));
+log.log(getTemplate("a"));
+log.log(getTemplate("b"));
 
 /***/ }
 /******/ ]);

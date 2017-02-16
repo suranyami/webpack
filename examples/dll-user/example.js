@@ -1,8 +1,8 @@
-console.log(require("../dll/alpha"));
-console.log(require("../dll/a"));
+log.log(require("../dll/alpha"));
+log.log(require("../dll/a"));
 
-console.log(require("beta/beta"));
-console.log(require("beta/b"));
-console.log(require("beta/c"));
+log.log(require("beta/beta"));
+log.log(require("beta/b"));
+log.log(require("beta/c"));
 
-console.log(require("module"));
+log.log(require("module"));

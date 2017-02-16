@@ -1,2 +1,2 @@
-console.log(__("Hello World"));
-console.log(__("Missing Text"));
+log.log(__("Hello World"));
+log.log(__("Missing Text"));

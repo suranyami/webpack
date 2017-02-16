@@ -14,15 +14,15 @@ window.onload = function() {
 					if(module.hot.status() in {abort:1,fail:1})
 						window.location.reload();
 					else
-						console.warn("Update failed: " + err);
+						log.warn("Update failed: " + err);
 					return;
 				}
 
 				if(!updatedModules || updatedModules.length === 0)
-					return console.log("Update is empty.");
-				console.log("Updated modules:");
+					return log.log("Update is empty.");
+				log.log("Updated modules:");
 				updatedModules.forEach(function(moduleId) {
-					console.log(" - " + moduleId);
+					log.log(" - " + moduleId);
 				});
 			});
 		};
@@ -43,13 +43,13 @@ window.onload = function() {
 	if(module.hot) {
 
 		module.hot.accept("./html.js", function() {
-			console.log("Replacing 'html.js' in 'index.js'");
+			log.log("Replacing 'html.js' in 'index.js'");
 			element1.innerHTML = require("./html.js");
 		});
 
 		module.hot.accept("./element.js", function() {
 			document.body.removeChild(element2);
-			console.log("Replacing 'element.js' in 'index.js'");
+			log.log("Replacing 'element.js' in 'index.js'");
 			element2 = require("./element.js");
 			document.body.appendChild(element2);
 		});

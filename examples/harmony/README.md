@@ -8,7 +8,7 @@ inc(a); // 2
 
 // async loading
 import("./async-loaded").then(function(asyncLoaded) {
-	console.log(asyncLoaded);
+	log.log(asyncLoaded);
 });
 ```
 
@@ -161,7 +161,7 @@ export function increment(val) {
 /******/ 	__webpack_require__.p = "js/";
 
 /******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ 	__webpack_require__.oe = function(err) { log.error(err); throw err; };
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 2);
@@ -207,7 +207,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__increment__["a" /* increment 
 
 // async loading
 __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, /*! ./async-loaded */ 1)).then(function(asyncLoaded) {
-	console.log(asyncLoaded);
+	log.log(asyncLoaded);
 });
 
 
