@@ -2,6 +2,7 @@ var path = require("path");
 var fs = require("fs");
 fs.existsSync = fs.existsSync || path.existsSync;
 var interpret = require("interpret");
+var log = require('picolog');
 
 module.exports = function(yargs, argv, convertOptions) {
 
@@ -470,6 +471,35 @@ module.exports = function(yargs, argv, convertOptions) {
 			ensureArray(options, "plugins");
 			options.plugins.push(loadPlugin(value));
 		});
+
+		log.level = log.ERROR;
+
+		ifArg("log-level", function(value) {
+			switch(value) {
+				case "none":
+					log.level = log.NONE;
+					break;
+				case "error":
+					log.level = log.ERROR;
+					break;
+				case "warn":
+					log.level = log.WARN;
+					break;
+				case "info":
+					log.level = log.INFO;
+					break;
+				case "log":
+					log.level = log.LOG;
+					break;
+				case "debug":
+					log.level = log.DEBUG;
+					break;
+				case "trace":
+					log.level = log.TRACE;
+					break;
+			}
+		});
+
 
 		mapArgToBoolean("bail");
 

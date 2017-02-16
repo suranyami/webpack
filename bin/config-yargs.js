@@ -261,6 +261,12 @@ module.exports = function(yargs) {
 				type: "boolean",
 				describe: "shortcut for --optimize-minimize --define process.env.NODE_ENV=\"production\"",
 				group: BASIC_GROUP
+			},
+			"log-level": {
+				type: "string",
+				describe: "Set the logging level (error warn info log debug trace none). Defaults to 'error'",
+				group: ADVANCED_GROUP
 			}
+
 		}).strict();
 };

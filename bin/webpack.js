@@ -5,6 +5,8 @@
 	Author Tobias Koppers @sokra
 */
 var path = require("path");
+var log = require("picolog");
+global.console = log;
 
 // Local version replace global one
 try {
