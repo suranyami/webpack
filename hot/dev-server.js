@@ -6,7 +6,6 @@
 
 var log = require('picolog');
 log.level = log.NONE;
-global.console = log;
 
 if(module.hot) {
 	var lastHash;
