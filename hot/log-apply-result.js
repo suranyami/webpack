@@ -4,7 +4,6 @@
 */
 
 var log = require('picolog');
-log.level = log.NONE;
 
 module.exports = function(updatedModules, renewedModules) {
 	var unacceptedModules = updatedModules.filter(function(moduleId) {

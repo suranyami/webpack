@@ -5,7 +5,6 @@
 /*globals window __webpack_hash__ */
 
 var log = require('picolog');
-log.level = log.NONE;
 
 if(module.hot) {
 	var lastHash;
